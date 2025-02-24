@@ -1,0 +1,10 @@
+.title-search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    padding: 3rem 2rem;
+}
