@@ -1,6 +1,7 @@
 import "./App.css";
 import Header from "./components/Header.tsx";
 import SearchBar from "./components/SearchBar.tsx";
+import Table from "./components/Table.tsx";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                 <h1>Funcionários</h1>
                 <SearchBar />
               </div>
+              <Table />
             </main>
         </>
     );
