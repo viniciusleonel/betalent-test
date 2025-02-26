@@ -6,7 +6,6 @@ import TableHeader from "./TableHeader";
 import TableRow from "./TableRow";
 
 function Table() {
-
     const [employees, setEmployees] = useState<Employee[]>([]);
 
     useEffect(() => {
@@ -23,18 +22,19 @@ function Table() {
         fetchData();
     }, []);
     return (
-        <div className="table-container">
-            <table>
-                <thead>
-                    <TableHeader />
-                </thead>
-                <tbody>
-                    {employees.map((employee) => (
-                        <TableRow key={employee.id} employeeData={employee} />
-                    ))}
-                </tbody>
-            </table>
-        </div>
+        <table>
+            <thead>
+                <TableHeader />
+            </thead>
+            <tbody>
+                {employees.map((employee) => (
+                    <TableRow
+                        key={employee.id}
+                        employeeData={employee}
+                    />
+                ))}
+            </tbody>
+        </table>
     );
 }
 

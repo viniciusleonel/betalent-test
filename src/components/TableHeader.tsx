@@ -8,7 +8,6 @@ function TableHeader() {
             </th>
 
             <th
-                className="test"
                 scope="col">NOME
             </th>
 
