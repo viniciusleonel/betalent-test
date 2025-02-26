@@ -22,12 +22,16 @@ th {
 
 td, th {
     text-align: left;
-    padding: 10px;
-    padding-left: 12px;
+    padding: 10px 0;
+    padding-left: 25px;
     font-size: 14px;
     border-bottom: 1px solid var(--gray-10);
     word-wrap: break-word;
     white-space: normal;
+}
+
+.employee_picture_container {
+    width: 15%;
 }
 
 .employee_picture {
@@ -37,19 +41,57 @@ td, th {
     object-fit: cover; 
 }
 
+.employeeData_job,
+.employeeData_admission_date, 
+.employeeData_phone {
+    display: none;
+}
+
+.icon_button{
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    outline: none;
+}
+
+.icon_svg {
+    width: 25px;
+}
+
+.circle_icon {
+    width: 10px;
+    height: 10px;
+    margin-left: 7px;
+    color: var(--white);
+    background-color: var(--white);
+    border-radius: 50%;
+    display: inline-block;
+}
+
 @media (min-width: 640px) {
-    table {
-        table-layout: fixed;
-    }
+
 
     td, th {
         font-size: 16px;
         padding: 12px;
         padding-left: 40px;
     }
+
+    .icon_container{
+        display: none;
+    }
     
     .employee_picture {
         width: 34px; 
         height: 34px;
+    }
+
+    .employeeData_job,
+    .employeeData_admission_date, 
+    .employeeData_phone {
+        display: table-cell;
     }
 }

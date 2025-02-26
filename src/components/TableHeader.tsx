@@ -4,25 +4,41 @@ function TableHeader() {
     return (
         <tr>
             <th
-                scope="col">FOTO
+                className="employee_picture_container"
+                scope="col"
+            >
+                FOTO
+            </th>
+
+            <th scope="col">NOME</th>
+
+            <th
+                className="icon_container"
+                scope="col"
+            >
+                <span className="circle_icon"></span>
             </th>
 
             <th
-                scope="col">NOME
+                className="employeeData_job"
+                scope="col"
+            >
+                CARGO
             </th>
 
             <th
-                scope="col">CARGO
+                className="employeeData_admission_date"
+                scope="col"
+            >
+                DATA DE ADMISSÃO
             </th>
 
             <th
-                scope="col">DATA DE ADMISSÃO
+                className="employeeData_phone"
+                scope="col"
+            >
+                TELEFONE
             </th>
-
-            <th
-                scope="col">TELEFONE
-            </th>
-
         </tr>
     );
 }
