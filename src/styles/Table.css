@@ -5,6 +5,7 @@ table {
     border: 1px solid var(--gray-10);
     border-radius: 8px 8px 0 0;
     overflow: hidden;
+    table-layout: auto; 
 }
 
 thead {
@@ -21,14 +22,34 @@ th {
 
 td, th {
     text-align: left;
-    padding: 12px;
-    padding-left: 40px;
+    padding: 10px;
+    padding-left: 12px;
+    font-size: 14px;
     border-bottom: 1px solid var(--gray-10);
+    word-wrap: break-word;
+    white-space: normal;
 }
 
 .employee_picture {
-    width: 34px; 
-    height: 34px; 
+    width: 28px;
+    height: 28px;
     border-radius: 50%; 
     object-fit: cover; 
+}
+
+@media (min-width: 640px) {
+    table {
+        table-layout: fixed;
+    }
+
+    td, th {
+        font-size: 16px;
+        padding: 12px;
+        padding-left: 40px;
+    }
+    
+    .employee_picture {
+        width: 34px; 
+        height: 34px;
+    }
 }
