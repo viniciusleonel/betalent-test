@@ -1,35 +1,43 @@
-import "../styles/TableRow.css";
+import { useEffect, useState } from "react";
+import "../styles/Table.css";
 import { Employee } from "../types/Employee";
+import getEmployeePicture from "../utils/getEmployeePicture";
+import formatDate from "../utils/formatDate";
+import formatPhoneNumber from "../utils/formatPhoneNumber";
 
 interface TableRowProps {
     employeeData: Employee;
-};
+}
 
-function TableRow({employeeData} : TableRowProps) {
+function TableRow({ employeeData }: TableRowProps) {
+    const [employeePicture, setEmployeePicture] = useState<string>("");
 
-    const formattedDatetime = new Date(employeeData.admission_date).toLocaleString();
+    useEffect(() => {
+        const fetchEmployeePicture = async () => {
+            const picture = await getEmployeePicture(employeeData);
+            setEmployeePicture(picture);
+        };
+
+        fetchEmployeePicture();
+    }, [employeeData]);
 
     return (
         <tr>
             <td>
-                {employeeData.image}
+                <img
+                    className="employee_picture"
+                    src={employeePicture}
+                    alt="Employee Picture"
+                />
             </td>
 
-            <td>
-                {employeeData.name}
-            </td>
+            <td className="test">{employeeData.name}</td>
 
-            <td>
-                {employeeData.job}
-            </td>
+            <td>{employeeData.job}</td>
 
-            <td>
-                {formattedDatetime}
-            </td>
-            
-            <td>
-                {employeeData.phone}
-            </td>
+            <td>{formatDate(employeeData.admission_date)}</td>
+
+            <td>{formatPhoneNumber(employeeData.phone)}</td>
         </tr>
     );
 }

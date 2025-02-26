@@ -4,6 +4,7 @@ import SearchBar from "./components/SearchBar.tsx";
 import Table from "./components/Table.tsx";
 
 function App() {
+
     return (
         <>
             <header>

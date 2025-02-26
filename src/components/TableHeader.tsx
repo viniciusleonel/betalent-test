@@ -1,4 +1,4 @@
-import "../styles/TableHeader.css";
+import "../styles/Table.css";
 
 function TableHeader() {
     return (
@@ -8,6 +8,7 @@ function TableHeader() {
             </th>
 
             <th
+                className="test"
                 scope="col">NOME
             </th>
 
