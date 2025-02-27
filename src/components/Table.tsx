@@ -5,7 +5,11 @@ import { Employee } from "../types/Employee";
 import TableHeader from "./TableHeader";
 import TableRow from "./TableRow";
 
-function Table() {
+interface TableProps {
+    searchTerm: string;
+}
+
+function Table({ searchTerm }: TableProps) {
     const [employees, setEmployees] = useState<Employee[]>([]);
 
     useEffect(() => {
@@ -21,6 +25,23 @@ function Table() {
 
         fetchData();
     }, []);
+
+    const normalizeString = (str: string) => {
+        return str
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "") 
+            .replace(/[-]/g, "")
+            .toLowerCase();
+    };
+
+    const filteredEmployees = employees.filter(employee => {
+        const normalizedSearchTerm = normalizeString(searchTerm);
+        return (
+            normalizeString(employee.name).includes(normalizedSearchTerm) ||
+            normalizeString(employee.job).includes(normalizedSearchTerm) ||
+            normalizeString(employee.phone).includes(normalizedSearchTerm)
+        );
+    });
     
     return (
         <table>
@@ -28,7 +49,7 @@ function Table() {
                 <TableHeader />
             </thead>
             <tbody>
-                {employees.map((employee) => (
+                {filteredEmployees.map((employee) => (
                     <TableRow
                         key={employee.id}
                         employeeData={employee}
