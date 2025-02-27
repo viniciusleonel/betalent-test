@@ -21,6 +21,7 @@ function Table() {
 
         fetchData();
     }, []);
+    
     return (
         <table>
             <thead>

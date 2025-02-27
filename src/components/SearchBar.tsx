@@ -6,7 +6,7 @@ function SearchBar() {
         <div className="search-container">
             <input
                 type="text"
-                className="search-input"
+                className="search-input h3"
                 placeholder="Pesquisar"
             />
             <img src={searchIcon} alt="Ícone de pesquisa" />
