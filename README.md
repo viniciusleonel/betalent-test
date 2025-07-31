@@ -72,7 +72,7 @@ Antes de rodar a aplicação, você precisa ter instalado em sua máquina:
 - `db.json`: Arquivo que simula o banco de dados com informações dos funcionários.
 - `vite.config.ts`: Configuração do Vite, o bundler utilizado na aplicação.
 
-## Feito por:
+## Criado por:
 
 ### Vinicius Leonel
 
